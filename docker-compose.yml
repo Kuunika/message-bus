@@ -5,6 +5,7 @@ networks:
 services:
   rabbitmq3:
     container_name: "messaging-queue"
+    restart: always
     image: rabbitmq:3.8-management-alpine
     env_file:
       - .env
