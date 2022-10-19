@@ -18,6 +18,8 @@ then
     echo "Please enter the username"
     read -s new_password
 
+    #TODO: Add confirm password
+
     rabbitmqctl add_user $new_username $new_password
     rabbitmqctl set_user_tags $new_username management
     rabbitmqctl set_permissions -p $new_vhost $new_username ".*" ".*" ".*"
