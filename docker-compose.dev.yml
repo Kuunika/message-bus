@@ -1,0 +1,23 @@
+version: "3.8"
+networks:
+  openhim:
+    external: true
+services:
+  rabbitmq3:
+    container_name: "national_message_bus"
+    image: rabbitmq:3.8-management-alpine
+    env_file:
+      - .env
+    networks:
+      - openhim
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
+    volumes:
+      - ${PATH_TO_VOLUME}:/var/lib/rabbitmq
+      - ./scripts:/scripts
+    ports:
+      # AMQP protocol port
+      - '5672:5672'
+      # HTTP management UI
+      - '15672:15672'
