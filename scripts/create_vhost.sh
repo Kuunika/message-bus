@@ -15,7 +15,7 @@ then
     echo "Please enter the username"
     read new_username
 
-    echo "Please enter the username"
+    echo "Please enter the password"
     read -s new_password
 
     #TODO: Add confirm password
