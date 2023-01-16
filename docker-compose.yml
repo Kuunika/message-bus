@@ -10,7 +10,7 @@ services:
     env_file:
       - .env
     networks:
-      - openhim
+      - ${DOCKER_NETWORK_NAME}
     environment:
       - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
       - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
